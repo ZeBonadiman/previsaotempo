@@ -118,3 +118,8 @@ button:hover {
     margin-bottom: 5px;
     color: #0078D4;
 }
+@media screen and (max-width: 768px){
+    .hora-container{
+        overflow: auto;
+    }
+}
