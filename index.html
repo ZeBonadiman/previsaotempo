@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Previsão do Tempo</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Previsão do Tempo</h1>
+        <button @click="obterPrevisaoPorLocalizacao">Usar Minha Localização</button>
+        <input v-model="cidade" placeholder="Digite o nome da cidade">
+        <button @click="obterPrevisao">Obter Previsão</button>
+        <div v-if="previsoesPorDia.length > 0">
+            <h2 class="cidade-header">Previsão para <span class="cidade-nome">{{ cidade }}</span></h2>
+            <div v-for="(dia, indice) in previsoesPorDia" :key="indice" class="dia-item" @click="mostrarDetalhesDia(indice)">
+                <div class="dia-info">
+                    <p class="data">{{ formatarData(dia[0].dt) }}</p>
+                    <img :src="obterIconeCondicao(dia[0].weather[0].icon)" :alt="dia[0].weather[0].description">
+                </div>
+                <p class="descricao">{{ dia[0].weather[0].description }}</p>
+                <p class="temperatura">Temp. Máx: {{ calcularTemperaturaMaxima(dia) }}°C / Min: {{ calcularTemperaturaMinima(dia) }}°C</p>
+                <p class="umidade-vento">Umidade Média: {{ calcularMediaUmidade(dia) }}% / Vento Médio: {{ calcularMediaVelocidadeVento(dia) }} km/h</p>
+                <div v-if="detalhesDia[indice].mostrar" class="hora-container">
+                    <div v-for="(hora, index) in obterPrevisoesACada3Horas(dia)" :key="index" class="hora-item">
+                        <p class="hora">{{ formatarHora(hora.dt) }}</p>
+                        <img :src="obterIconeCondicao(hora.weather[0].icon)" :alt="hora.weather[0].description">
+                        <p class="descricao">{{ hora.weather[0].description }}</p>
+                        <p>Temp.: {{ hora.main.temp }}°C</p>
+                        <p>Umidade: {{ hora.main.humidity }}%</p>
+                        <p>Vento: {{ hora.wind.speed }} km/h</p>
+                    </div>
+                </div>                                                                       
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>

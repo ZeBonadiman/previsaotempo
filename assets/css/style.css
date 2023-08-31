@@ -1,0 +1,120 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0078D4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+#app {
+    width: 100%;
+    max-width: 860px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+h1 {
+    text-align: center;
+    color: #0078D4;
+}
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    background-color: transparent;
+    font-size: 16px;
+    color: #333;
+    margin-top: 30px
+}
+button {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #0078D4;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+button:hover {
+    background-color: #005A9E;
+}
+.cidade-header {
+    text-align: center;
+    margin-top: 20px;
+}
+.cidade-nome {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0078D4;
+}
+.cidade-detalhes {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    color: #333;
+}
+.dia-item {
+    border-top: 1px solid #ccc;
+    padding: 6px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+.dia-item:last-child {
+    border-bottom: 1px solid #ccc;
+}
+.dia-item:hover {
+    background-color: #f0f0f0;
+}
+.dia-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.data {
+    font-weight: bold;
+    margin-right: 10px;
+}
+.descricao {
+    font-style: italic;
+    color: #333;
+}
+.temperatura {
+    font-size: 18px;
+    font-weight: bold;
+    color: #0078D4;
+}
+.umidade-vento {
+    font-size: 14px;
+    color: #333;
+}
+.hora-container {
+    display: flex;
+    margin-top: 10px;
+}
+.hora-item {
+    width: calc(33.33% - 20px);
+    padding: 10px;
+    margin: 4px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+.hora-item:hover {
+    background-color: #f0f0f0;
+}
+.hora {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #0078D4;
+}
